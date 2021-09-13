@@ -2,14 +2,15 @@
 header("Content-Type: application/x-www-form-urlencoded; charset=UTF-8");
 
 //如果使用隐私模式，在这里填入你的API_KEY，如果使用公开模式则置空
-$apikey = 'ur609264-8262679743e293e750679dbe';
-
+$apikey = 'ur609264-826267974xxxxxxxxxxxxxxx';
 
 $link = 'https://api.uptimerobot.com/v2/getMonitors';
 
 //请求UptimeRobot
-$data = json_decode(file_get_contents("php://input"));
-$data->api_key = $apikey;
+$data = json_decode(file_get_contents("php://input"));、
+if($apikey != ''){
+    $data->api_key = $apikey;
+}
 $data  = http_build_query($data);
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $link);
