@@ -7,7 +7,7 @@ $apikey = 'ur609264-826267974xxxxxxxxxxxxxxx';
 $link = 'https://api.uptimerobot.com/v2/getMonitors';
 
 //请求UptimeRobot
-$data = json_decode(file_get_contents("php://input"));、
+$data = json_decode(file_get_contents("php://input"));
 if($apikey != ''){
     $data->api_key = $apikey;
 }
